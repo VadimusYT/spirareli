@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #ffccf9, #b5ffff);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: linear-gradient(to right, #ff6b6b, #ffa06b);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  color: white;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 0 #ff8800;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  flex: 1;
+  border-top: 8px dotted #ff8800;
+  border-bottom: 8px dotted #ff8800;
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.intro-section h2 {
+  color: #ff6b6b;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.model-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.model-container {
+  background: linear-gradient(to bottom, #fffacd, #ffdab9);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border: 3px dashed #ffa06b;
+  transition: transform 0.3s ease;
+}
+
+.model-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.model-container h3 {
+  color: #ff6b6b;
+  margin-bottom: 15px;
+  font-size: 1.7rem;
+}
+
+.model-container p {
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.model-viewer {
+  width: 100%;
+  height: 300px;
+  background-color: #f0f8ff;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid #ffccf9;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.gallery-item {
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding: 15px;
+  background-color: #fefefe;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border: 3px solid #b5ffff;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px) rotate(3deg);
+}
+
+.gallery-item h3 {
+  color: #ff6b6b;
+  margin-top: 15px;
+  font-size: 1.5rem;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  border: 5px solid #ffccf9;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 25px;
+  background: linear-gradient(to right, #ff6b6b, #ffa06b);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+}
+
+/* Balloon animation */
+.balloon {
+  position: fixed;
+  width: 40px;
+  height: 50px;
+  background-color: #ff6b6b;
+  border-radius: 50%;
+  animation: float 15s infinite linear;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.balloon::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 15px;
+  background-color: #ff6b6b;
+  bottom: -8px;
+  left: 15px;
+  border-radius: 0 0 5px 5px;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  background-color: #ccc;
+  bottom: -58px;
+  left: 19px;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) translateX(0); }
+  100% { transform: translateY(-100px) translateX(calc(100vw - 100px)); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  main {
+    padding: 25px;
+  }
+
+  .model-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .model-viewer {
+    height: 250px;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
