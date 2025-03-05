@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
   createBalloons(10);
   
   // Setup and animate 3D models with fun colors
-  setupModel('model-inside', '/medium-inside.stl', 0xFF6B6B); // Fun pink color
-  setupModel('model-outside', '/Medium-outside.stl', 0x65D1FE); // Fun blue color
+  setupModel('model-inside', 'medium-inside.stl', 0xFF6B6B); // Fun pink color
+  setupModel('model-outside', 'Medium-outside.stl', 0x65D1FE); // Fun blue color
   
   // Add subtle animation to the gallery items
   const galleryItems = document.querySelectorAll('.gallery-item');
